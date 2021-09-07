@@ -68,8 +68,9 @@ var displayRepo = function (repos, searchTerm)
         var titleEl = document.createElement("span");
         titleEl.textContent = repoName;
 
-        var repoEl = document.createElement("div");
+        var repoEl = document.createElement("a");
         repoEl.classList = "list-item flex-row justify-space-between align-center";
+        repoEl.setAttribute("href", "./single-repo.html?repo=" + repoName);
         repoEl.appendChild(titleEl);
 
 
@@ -93,8 +94,8 @@ var displayRepo = function (repos, searchTerm)
     }
 
 
-    console.log(repos);
-    console.log(searchTerm);
+    console.log("repos", repos);
+    console.log("searchterm", searchTerm);
 };
 
 userFormEl = addEventListener("submit", formSubmissionHandler);
